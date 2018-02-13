@@ -75,8 +75,13 @@ Run `yarn account:trust` and enter the **Private Key** of the user account.
 Run `yarn account:info` and enter the **Public Key** of the user account to check if everything is ok.
 
 
-## Add coins to the user account
+## Add initial coins to the user account
 
 Run `yarn distributor:transfer` and enter the **Public Key** of the user account as well as the amount.
 
 Run `yarn account:info` and enter the **Public Key** of the user account to check if everything is ok.
+
+
+## Transfer coins from user to user
+
+TODO: add `yarn account:transfer` task that asks for two public keys (sender, receiver)
