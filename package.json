@@ -1,5 +1,5 @@
 {
-  "name": "stellar-tryouts",
+  "name": "stellar-coin",
   "scripts": {
     "account:create": "node ./tasks/account/create.js",
     "account:fund:test": "node ./tasks/account/fund_test.js",
