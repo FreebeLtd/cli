@@ -5,9 +5,11 @@ const assetCode = 'MOPS';
 
 let issuerCredentials = null;
 let distributorCredentials = null;
+let asset = null;
 
 try {
   issuerCredentials = require('./.credentials_issuer');
+  asset = new StellarSdk.Asset(assetCode, issuer.publicKey());
 } catch (e) {
   console.warn('No issuer credentials found.');
 }
@@ -34,7 +36,6 @@ if (distributorCredentials && distributorCredentials.secret) {
 }
 
 const server = new StellarSdk.Server('https://horizon-testnet.stellar.org');
-const asset = new StellarSdk.Asset(assetCode, issuer.publicKey());
 
 module.exports = {
   server,
