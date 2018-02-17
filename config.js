@@ -9,7 +9,6 @@ let asset = null;
 
 try {
   issuerCredentials = require('./.credentials_issuer');
-  asset = new StellarSdk.Asset(assetCode, issuer.publicKey());
 } catch (e) {
   console.warn('No issuer credentials found.');
 }
@@ -27,6 +26,9 @@ if (issuerCredentials && issuerCredentials.secret) {
   issuer = StellarSdk.Keypair.fromSecret(issuerCredentials.secret);
 } else if (issuerCredentials) {
   issuer = StellarSdk.Keypair.fromPublicKey(issuerCredentials.public);
+}
+if (issuer) {
+  asset = new StellarSdk.Asset(assetCode, issuer.publicKey());
 }
 
 if (distributorCredentials && distributorCredentials.secret) {
