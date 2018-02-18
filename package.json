@@ -5,6 +5,7 @@
     "account:fund:test": "node ./tasks/account/fund_test.js",
     "account:info": "node ./tasks/account/info.js",
     "account:trust": "node ./tasks/account/trust.js",
+    "asset:info": "node ./tasks/asset/info.js",
     "distributor:transfer": "node ./tasks/distributor/transfer.js",
     "issuer:fund_distributor": "node ./tasks/issuer/fund_distributor.js"
   },
@@ -12,6 +13,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "cli-table": "^0.3.1",
     "prettier": "^1.10.2",
     "readline-sync": "^1.4.8",
     "request": "^2.83.0",

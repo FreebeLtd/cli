@@ -77,11 +77,21 @@ Run `yarn account:info` and enter the **Public Key** of the user account to chec
 
 ## Add initial coins to the user account
 
-Run `yarn distributor:transfer` and enter the **Public Key** of the user account as well as the amount.
+Run `yarn distributor:transfer` and enter the **Public Key** of the receiving user account as well as the amount.
 
-Run `yarn account:info` and enter the **Public Key** of the user account to check if everything is ok.
+Run `yarn account:info` and enter the **Public Key** of the receiving user account to check if everything is ok.
 
 
 ## Transfer coins from user to user
 
 TODO: add `yarn account:transfer` task that asks for two public keys (sender, receiver)
+
+TODO: add `yarn asset:stream` task that streams asset activity
+
+
+# Issuer Utilities
+
+
+# Get Information about Asset
+
+Run `yarn asset:info` to get a short overview over the asset.
