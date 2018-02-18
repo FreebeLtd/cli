@@ -33,7 +33,10 @@ const printRecords = records => {
 };
 
 const printRecord = record => {
-  const table = new Table();
+  const table = new Table({
+    head: ['Key', 'Value'],
+    colWidths: [12, 68]
+  });
   table.push({ Type: record.type });
   table.push({ Date: record.created_at });
 
@@ -64,11 +67,11 @@ const loadAccount = async () => {
 
 loadAccount()
   .then(({ account, records }) => {
-    console.log('Balances for account');
-    printBalances(account.balances);
-
     console.log('Last operations for account');
     printRecords(records);
+
+    console.log('Balances for account');
+    printBalances(account.balances);
   })
   .catch(error => {
     console.error('Error loading account!');
