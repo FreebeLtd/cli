@@ -1,3 +1,4 @@
+const Table = require('cli-table');
 const { promptPublicKey } = require('../../lib/input');
 const { StellarSdk, server } = require('../../config');
 
@@ -14,48 +15,60 @@ const printableAttributes = [
   'amount'
 ];
 
-const printRecord = record => {
-  console.info(`Type: ${record.type} from ${record.created_at}`);
+const printBalances = balances => {
+  const table = new Table();
 
-  const printable = printableAttributes.reduce((acc, attr) => {
-    if (record[attr]) {
-      acc[attr] = record[attr];
-    }
-    return acc;
-  }, {});
+  balances.forEach(function(balance) {
+    const key = `${balance.asset_code || balance.asset_type}`;
+    const obj = {};
+    obj[key] = balance.balance;
+    table.push(obj);
+  });
 
-  console.dir(printable);
-  console.info(`Link: ${record._links.self.href}`);
+  console.log(table.toString());
 };
 
-server
-  .loadAccount(kp.publicKey())
-  .then(account => {
+const printRecords = records => {
+  records.forEach(record => printRecord(record));
+};
+
+const printRecord = record => {
+  const table = new Table();
+  table.push({ Type: record.type });
+  table.push({ Date: record.created_at });
+
+  printableAttributes.forEach(attr => {
+    if (record[attr]) {
+      const obj = {};
+      obj[attr] = record[attr];
+      table.push(obj);
+    }
+  });
+
+  table.push({ Link: record._links.self.href });
+  console.log(table.toString());
+};
+
+const loadAccount = async () => {
+  const account = await server.loadAccount(kp.publicKey());
+  const page1 = await server
+    .operations()
+    .forAccount(kp.publicKey())
+    .call();
+  const page2 = await page1.next();
+  const page3 = await page2.next();
+  const records = page1.records.concat(page2.records, page3.records);
+
+  return { account, records };
+};
+
+loadAccount()
+  .then(({ account, records }) => {
     console.log('Balances for account');
-    account.balances.forEach(function(balance) {
-      console.log(
-        `Type: ${balance.asset_code || balance.asset_type} - Balance: ${
-          balance.balance
-        }`
-      );
-    });
+    printBalances(account.balances);
 
     console.log('Last operations for account');
-    return server
-      .operations()
-      .forAccount(kp.publicKey())
-      .call();
-  })
-  .then(function(page) {
-    page.records.forEach(record => printRecord(record));
-    return page.next();
-  })
-  .then(function(page) {
-    page.records.forEach(record => printRecord(record));
-    return page.next();
-  })
-  .then(function(page) {
-    page.records.forEach(record => printRecord(record));
+    printRecords(records);
   })
   .catch(error => {
     console.error('Error loading account!');
