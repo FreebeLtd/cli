@@ -1,3 +1,26 @@
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Roles / Keypairs](#roles--keypairs)
+    - [Issuer](#issuer)
+    - [Distributor](#distributor)
+    - [User](#user)
+- [One Time Setup](#one-time-setup)
+    - [Install dependencies](#install-dependencies)
+    - [Create Issuer Account](#create-issuer-account)
+    - [Create Distributor Account](#create-distributor-account)
+    - [Give the Distributor Account some of the Coins](#give-the-distributor-account-some-of-the-coins)
+- [User Setup](#user-setup)
+    - [If no account exists](#if-no-account-exists)
+    - [Add initial coins to the user account](#add-initial-coins-to-the-user-account)
+- [General Tasks](#general-tasks)
+    - [Get balances and general information about any account](#get-balances-and-general-information-about-any-account)
+    - [Transfer coins from user to user](#transfer-coins-from-user-to-user)
+    - [Get Information about Asset](#get-information-about-asset)
+
+<!-- markdown-toc end -->
+
+
 # Roles / Keypairs
 
 
