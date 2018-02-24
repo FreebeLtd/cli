@@ -1,4 +1,5 @@
 const { promptAssetAmount } = require('../../lib/input');
+const { buildPayment } = require('../../lib/transactions');
 const out = require('../../lib/output');
 const {
   StellarSdk,
@@ -12,16 +13,12 @@ const transferAssets = async amount => {
   const issuerAccount = await server.loadAccount(issuer.publicKey());
   out.progress('Issuer account loaded');
 
-  const transaction = new StellarSdk.TransactionBuilder(issuerAccount)
-    .addOperation(
-      StellarSdk.Operation.payment({
-        asset,
-        amount,
-        destination: distributor.publicKey()
-      })
-    )
-    .build();
-  transaction.sign(issuer);
+  const transaction = buildPayment({
+    amount,
+    receiver: distributor,
+    sender: issuer,
+    senderAccount: issuerAccount
+  });
 
   out.progress('Submitting transaction');
   return server.submitTransaction(transaction);
