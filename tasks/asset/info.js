@@ -1,5 +1,6 @@
 const Table = require('cli-table');
 const { server, asset } = require('../../config');
+const out = require('../../lib/output');
 
 const renderInfo = response => {
   const info = response.records[0];
@@ -25,7 +26,4 @@ server
   .limit(1)
   .call()
   .then(renderInfo)
-  .catch(e => {
-    console.error('Error!');
-    console.dir(e);
-  });
+  .catch(error => out.error('Error fetching asset information', error));

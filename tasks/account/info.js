@@ -1,5 +1,6 @@
 const Table = require('cli-table');
 const { promptPublicKey } = require('../../lib/input');
+const out = require('../../lib/output');
 const { StellarSdk, server } = require('../../config');
 
 const publicKey = promptPublicKey();
@@ -67,13 +68,10 @@ const loadAccount = async () => {
 
 loadAccount()
   .then(({ account, records }) => {
-    console.log('Last operations for account');
+    out.info('Last operations for account');
     printRecords(records);
 
-    console.log('Balances for account');
+    out.info('Balances for account');
     printBalances(account.balances);
   })
-  .catch(error => {
-    console.error('Error loading account!');
-    console.dir(error);
-  });
+  .catch(error => out.error('Error loading account', error));
