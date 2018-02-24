@@ -82,14 +82,14 @@ Run `yarn distributor:transfer` and enter the **Public Key** of the receiving us
 Run `yarn account:info` and enter the **Public Key** of the receiving user account to check if everything is ok.
 
 
+# General Tasks
+
+
 ## Transfer coins from user to user
 
-TODO: add `yarn account:transfer` task that asks for two public keys (sender, receiver)
+Run `yarn account:transfer` to transfer an amount of the asset from one account to another. You will need the **Public Key** of the receiving account, but the **Private Key** of the sending account.
 
 
-# Issuer Utilities
-
-
-# Get Information about Asset
+## Get Information about Asset
 
 Run `yarn asset:info` to get a short overview over the asset.

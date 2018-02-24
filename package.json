@@ -4,6 +4,7 @@
     "account:create": "node ./tasks/account/create.js",
     "account:fund:test": "node ./tasks/account/fund_test.js",
     "account:info": "node ./tasks/account/info.js",
+    "account:transfer": "node ./tasks/account/transfer.js",
     "account:trust": "node ./tasks/account/trust.js",
     "asset:info": "node ./tasks/asset/info.js",
     "distributor:transfer": "node ./tasks/distributor/transfer.js",
