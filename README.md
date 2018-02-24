@@ -85,6 +85,11 @@ Run `yarn account:info` and enter the **Public Key** of the receiving user accou
 # General Tasks
 
 
+## Get balances and general information about any account
+
+Run `yarn account:info` and enter the **Public Key** of the account.
+
+
 ## Transfer coins from user to user
 
 Run `yarn account:transfer` to transfer an amount of the asset from one account to another. You will need the **Public Key** of the receiving account, but the **Private Key** of the sending account.
