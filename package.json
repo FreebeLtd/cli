@@ -7,6 +7,7 @@
     "account:transfer": "node ./tasks/account/transfer.js",
     "account:trust": "node ./tasks/account/trust.js",
     "asset:info": "node ./tasks/asset/info.js",
+    "asset:watch": "node ./tasks/asset/watch.js",
     "distributor:transfer": "node ./tasks/distributor/transfer.js",
     "issuer:fund_distributor": "node ./tasks/issuer/fund_distributor.js"
   },
