@@ -17,6 +17,7 @@
     - [Get balances and general information about any account](#get-balances-and-general-information-about-any-account)
     - [Transfer coins from user to user](#transfer-coins-from-user-to-user)
     - [Get Information about Asset](#get-information-about-asset)
+    - [Live Stream of Effects of Asset](#live-stream-of-effects-of-asset)
 
 <!-- markdown-toc end -->
 
@@ -121,3 +122,7 @@ Run `yarn account:transfer` to transfer an amount of the asset from one account 
 ## Get Information about Asset
 
 Run `yarn asset:info` to get a short overview over the asset.
+
+## Live Stream of Effects of Asset
+
+Run `yarn asset:watch` to get live stream of what happens with the asset in real-time.
