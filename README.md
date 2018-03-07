@@ -7,8 +7,8 @@
     - [User](#user)
 - [One Time Setup](#one-time-setup)
     - [Install dependencies](#install-dependencies)
-    - [Create Issuer Account](#create-issuer-account)
-    - [Create Distributor Account](#create-distributor-account)
+    - [Generate Issuer Account](#generate-issuer-account)
+    - [Generate Distributor Account](#generate-distributor-account)
     - [Give the Distributor Account some of the Coins](#give-the-distributor-account-some-of-the-coins)
 - [User Setup](#user-setup)
     - [If no account exists](#if-no-account-exists)
@@ -60,16 +60,16 @@ Run `yarn run` to get a list of all commands.
 Make sure to run prettier (respecting the ./prettierrc.js file) before comitting changes.
 
 
-## Create Issuer Account
+## Generate Issuer Account
 
-Create account information with `yarn account:create`, put it into `.credentials_issuer.js` (see `.credentials_example.js` for the right format).
+Generate account information with `yarn account:generate`, put it into `.credentials_issuer.js` (see `.credentials_example.js` for the right format).
 
 Run `yarn account:fund:test` and enter the **Public Key** of the issuers account.
 
 
-## Create Distributor Account
+## Generate Distributor Account
 
-Create account information with `yarn account:create`, put it into `.credentials_distributor.js` (see `.credentials_example.js` for the right format).
+Generate account information with `yarn account:generate`, put it into `.credentials_distributor.js` (see `.credentials_example.js` for the right format).
 
 Run `yarn account:fund:test` and enter the **Public Key** of the Distributor account.
 
@@ -90,7 +90,7 @@ Run `yarn account:info` and enter the **Public Key** of the Distributor account 
 
 ## If no account exists
 
-Create account information with `yarn account:create`.
+Generate account information with `yarn account:generate`.
 
 Run `yarn account:fund:test` and enter the **Public Key** of the user account.
 

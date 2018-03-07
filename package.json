@@ -1,7 +1,7 @@
 {
   "name": "stellar-coin",
   "scripts": {
-    "account:create": "node ./tasks/account/create.js",
+    "account:generate": "node ./tasks/account/generate.js",
     "account:fund:test": "node ./tasks/account/fund_test.js",
     "account:info": "node ./tasks/account/info.js",
     "account:transfer": "node ./tasks/account/transfer.js",
