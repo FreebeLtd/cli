@@ -12,6 +12,8 @@
     - [Give the Distributor Account some of the Coins](#give-the-distributor-account-some-of-the-coins)
 - [User Setup](#user-setup)
     - [If no account exists](#if-no-account-exists)
+        - [All in one user account creation on testnet](#all-in-one-user-account-creation-on-testnet)
+        - [Step by step user account creation](#step-by-step-user-account-creation)
     - [Add initial coins to the user account](#add-initial-coins-to-the-user-account)
 - [General Tasks](#general-tasks)
     - [Get balances and general information about any account](#get-balances-and-general-information-about-any-account)
@@ -89,6 +91,22 @@ Run `yarn account:info` and enter the **Public Key** of the Distributor account 
 
 
 ## If no account exists
+
+
+### All in one user account creation on testnet
+
+
+Run `yarn account:create:test`, which will:
+
+* Create a new keypair
+* Fund the keypair on testnet
+* Create trustline for asset on new account
+* Transfer a given amount of asset to new account
+
+When completed, the task will provide the **Public Key** and the **Private Key** (in form of a QR code) as output.
+
+
+### Step by step user account creation
 
 Generate account information with `yarn account:generate`.
 
