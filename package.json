@@ -1,6 +1,7 @@
 {
   "name": "stellar-coin",
   "scripts": {
+    "account:create:test": "node ./tasks/account/create_test.js",
     "account:generate": "node ./tasks/account/generate.js",
     "account:fund:test": "node ./tasks/account/fund_test.js",
     "account:info": "node ./tasks/account/info.js",
@@ -18,6 +19,7 @@
     "chalk": "^2.3.1",
     "cli-table": "^0.3.1",
     "prettier": "^1.10.2",
+    "qrcode-terminal": "^0.11.0",
     "readline-sync": "^1.4.8",
     "request": "^2.83.0",
     "stellar-sdk": "^0.8.0"
