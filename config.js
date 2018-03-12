@@ -1,7 +1,7 @@
 const StellarSdk = require('stellar-sdk');
 StellarSdk.Network.useTestNetwork();
 
-const assetCode = 'MOPS';
+const assetCode = 'CNDY';
 
 let issuerCredentials = null;
 let distributorCredentials = null;
