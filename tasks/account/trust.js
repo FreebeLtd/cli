@@ -1,4 +1,4 @@
-const { StellarSdk } = require('../config');
+const { StellarSdk } = require('../../config');
 const { promptPrivateKey } = require('../../lib/input');
 const out = require('../../lib/output');
 const { trustAccount } = require('../../lib/transactions');
