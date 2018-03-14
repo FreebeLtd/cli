@@ -1,6 +1,7 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
+- [Quickstart Demo Version](#quickstart-demo-version)
 - [Roles / Keypairs](#roles--keypairs)
     - [Issuer](#issuer)
     - [Distributor](#distributor)
@@ -22,6 +23,18 @@
     - [Live Stream of Effects of Asset](#live-stream-of-effects-of-asset)
 
 <!-- markdown-toc end -->
+
+# Quickstart Demo Version
+
+* Clone git repository
+* Run `yarn install`
+* Rename `.credentials_distributor_demo.js` to `.credentials_distributor.js`
+* Rename `.credentials_issuer_demo.js` to `.credentials_issuer.js`
+* Run `yarn run` to get an overview over the available tasks
+* Run `yarn account:create:test
+* Go to [cndy.store](http://cndy.store) and see the changes on the dashboard
+
+**Note**: Please be aware that you are sharing private keys with everyone else when using demo mode!
 
 
 # Roles / Keypairs
