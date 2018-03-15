@@ -41,6 +41,8 @@ if (amount !== false) {
       out.success('Account was created and funded!');
       out.info('Public Key');
       out.info(newKeypair.publicKey());
+      out.warn('Secret Key');
+      out.warn(newKeypair.secret());
       out.info('Use the camera to scan the QR code of the secret');
     })
     .catch(error => out.error(error));
