@@ -31,7 +31,7 @@
 * Rename `.credentials_distributor_demo.js` to `.credentials_distributor.js`
 * Rename `.credentials_issuer_demo.js` to `.credentials_issuer.js`
 * Run `yarn run` to get an overview over the available tasks
-* Run `yarn account:create:test
+* Run `yarn account:create:test`
 * Go to [cndy.store](http://cndy.store) and see the changes on the dashboard
 
 **Note**: Please be aware that you are sharing private keys with everyone else when using demo mode!
