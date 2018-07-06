@@ -91,6 +91,15 @@ Run `yarn account:fund:test` and enter the **Public Key** of the Distributor acc
 Run `yarn account:info` and enter the **Public Key** of the Distributor account to check if everything is ok.
 
 
+## Register new asset in analytics
+
+Before you issue any coins, you should register your new asset with the analytics API.
+
+```bash
+curl -X POST --data '{"code": "CNDY", "issuer": "ISSUER_PUBLIC_KEY"}' https://api.cndy.store/assets |jq .
+```
+
+
 ## Give the Distributor Account some of the Coins
 
 Run `yarn account:trust` and enter the **Private Key** of the Distributor account.
