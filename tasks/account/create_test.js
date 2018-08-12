@@ -25,7 +25,7 @@ const createAccount = async amount => {
   try {
     await transferAssets(newKeypair, amount);
     out.progress(`Successfully transfered ${amount} ${asset.code}.`);
-  } catch (e) {
+  } catch (error) {
     return out.error('Error transferring coins to account', error);
   }
 
