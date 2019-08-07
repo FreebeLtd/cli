@@ -1,7 +1,16 @@
 const Table = require('cli-table');
-const { server, asset } = require('../../config');
+const { StellarSdk, server, issuer/*, asset*/ } = require('../../config');
+const {
+  promptAssetCode
+} = require('../../lib/input');
 const out = require('../../lib/output');
 
+const assetCode = promptAssetCode();
+let asset = null;
+
+if (issuer) {
+  asset = new StellarSdk.Asset(assetCode, issuer.publicKey());
+}
 const renderInfo = response => {
   const info = response.records[0];
   const table = new Table();

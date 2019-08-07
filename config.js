@@ -1,7 +1,7 @@
 const StellarSdk = require('stellar-sdk');
 StellarSdk.Network.useTestNetwork();
 
-const assetCode = 'CNDY';
+const assetCode = 'NGN';
 
 let issuerCredentials = null;
 let distributorCredentials = null;
