@@ -1,5 +1,11 @@
-const { server, asset } = require('../../config');
+const { server } = require('../../config');
 const out = require('../../lib/output');
+
+const {
+  promptAsset
+} = require('../../lib/input');
+
+const asset = promptAsset("watch")
 
 out.info('Watching out for Asset ' + asset.code);
 

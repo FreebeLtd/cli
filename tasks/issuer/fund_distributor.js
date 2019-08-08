@@ -1,19 +1,19 @@
-const { promptAssetAmount } = require('../../lib/input');
+const { promptAsset, promptAssetAmount } = require('../../lib/input');
 const { buildPayment } = require('../../lib/transactions');
 const out = require('../../lib/output');
 const {
-  StellarSdk,
-  asset,
   issuer,
   distributor,
   server
 } = require('../../config');
 
-const transferAssets = async amount => {
+
+const transferAssets = async (asset, amount) => {
   const issuerAccount = await server.loadAccount(issuer.publicKey());
   out.progress('Issuer account loaded');
 
   const transaction = buildPayment({
+    asset,
     amount,
     receiver: distributor,
     sender: issuer,
@@ -24,10 +24,11 @@ const transferAssets = async amount => {
   return server.submitTransaction(transaction);
 };
 
-const amount = promptAssetAmount();
+const asset = promptAsset("fund")
+const amount = promptAssetAmount(asset);
 
-if (amount !== false) {
-  transferAssets(amount)
+if (asset && amount !== false) {
+  transferAssets(assset, amount)
     .then(() => {
       const msg = `Transfered ${amount} ${asset.code} to distributor.`;
       out.success(msg);

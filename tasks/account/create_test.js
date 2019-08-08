@@ -1,7 +1,7 @@
-const { StellarSdk, asset, server } = require('../../config');
+const { StellarSdk } = require('../../config');
 const { fundAccount } = require('../../lib/friendbot');
 const { transferAssets, trustAccount } = require('../../lib/transactions');
-const { promptAssetAmount, promptPublicKey } = require('../../lib/input');
+const { promptAsset, promptAssetAmount } = require('../../lib/input');
 const out = require('../../lib/output');
 
 const createAccount = async amount => {
@@ -32,9 +32,10 @@ const createAccount = async amount => {
   return newKeypair;
 };
 
-const amount = promptAssetAmount();
+const asset = promptAsset("create")
+const amount = promptAssetAmount(asset);
 
-if (amount !== false) {
+if (asset && amount !== false) {
   createAccount(amount)
     .then(newKeypair => {
       out.secretAsQR(newKeypair.secret());

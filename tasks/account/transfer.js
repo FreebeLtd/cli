@@ -1,7 +1,8 @@
 const out = require('../../lib/output');
 const { buildPayment } = require('../../lib/transactions');
-const { StellarSdk, asset, distributor, server } = require('../../config');
+const { StellarSdk, server } = require('../../config');
 const {
+  promptAsset,
   promptAssetAmount,
   promptPublicKey,
   promptPrivateKey
@@ -22,6 +23,8 @@ const transferAssets = async (sender, receiver, amount) => {
   return server.submitTransaction(transaction);
 };
 
+const asset = promptAsset("transfer")
+
 out.info('Enter the PUBLIC key of the RECEIVER');
 const publicKey = promptPublicKey();
 const receiver = StellarSdk.Keypair.fromPublicKey(publicKey);
@@ -31,7 +34,7 @@ const privateKey = promptPrivateKey();
 const sender = StellarSdk.Keypair.fromSecret(privateKey);
 
 out.info('Enter the amount to transfer');
-const amount = promptAssetAmount();
+const amount = promptAssetAmount(asset);
 
 if (amount !== false) {
   transferAssets(sender, receiver, amount)

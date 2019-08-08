@@ -1,16 +1,17 @@
 {
   "name": "stellar-coin",
   "scripts": {
-    "account:create:test": "node ./tasks/account/create_test.js",
     "account:generate": "node ./tasks/account/generate.js",
     "account:fund:test": "node ./tasks/account/fund_test.js",
+    "account:create:test": "node ./tasks/account/create_test.js",
     "account:info": "node ./tasks/account/info.js",
     "account:transfer": "node ./tasks/account/transfer.js",
     "account:trust": "node ./tasks/account/trust.js",
     "asset:info": "node ./tasks/asset/info.js",
     "asset:watch": "node ./tasks/asset/watch.js",
     "distributor:transfer": "node ./tasks/distributor/transfer.js",
-    "issuer:fund_distributor": "node ./tasks/issuer/fund_distributor.js"
+    "issuer:fund_distributor": "node ./tasks/issuer/fund_distributor.js",
+    "trade:buy": "node ./tasks/trade/buy.js"
   },
   "version": "1.0.0",
   "main": "index.js",

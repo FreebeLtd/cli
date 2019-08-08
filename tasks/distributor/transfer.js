@@ -1,14 +1,16 @@
-const { promptAssetAmount, promptPublicKey } = require('../../lib/input');
+const { promptAsset, promptAssetAmount, promptPublicKey } = require('../../lib/input');
 const { transferAssets } = require('../../lib/transactions');
 const out = require('../../lib/output');
-const { StellarSdk, asset, distributor, server } = require('../../config');
+const { StellarSdk } = require('../../config');
 
 const publicKey = promptPublicKey();
 const receiver = StellarSdk.Keypair.fromPublicKey(publicKey);
-const amount = promptAssetAmount();
+
+const asset = promptAsset("transfer")
+const amount = promptAssetAmount(asset);
 
 if (amount !== false) {
-  transferAssets(receiver, amount)
+  transferAssets(receiver, asset, amount)
     .then(() => out.success(`Successfully transfered ${amount} ${asset.code}.`))
     .catch(error => out.error('Error transferring coins to account', error));
 }
