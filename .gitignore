@@ -1,5 +1,7 @@
 .credentials_issuer.js
 .credentials_distributor.js
+.credentials_ngn.js
+.credentials_cny.js
 
 # Logs
 logs
